@@ -1,45 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Reduce Tu Huella de Carbono</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Check</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">Eco-Check</div>
-    <nav class="nav">
-      <a href="#about">Sobre Nosotros</a>
-      <a href="#solutions">Soluciones</a>
-      <a href="#contact">Contacto</a>
-      <button class="btn">Calcula Tu Huella</button>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <h1>Eco-Check</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">Sobre Nosotros</a></li>
+        <li><a href="#solutions">Soluciones</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#calculator" class="btn">Calcula Tu Huella</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-text">
-      <h1>Actúa Hoy para un Mañana Mejor</h1>
-      <p>Conoce tu impacto ambiental y descubre cómo reducir tu huella de carbono. ¡Juntos por un planeta más limpio y sostenible!</p>
-      <button class="btn">Empieza Ahora</button>
-    </div>
-    <div class="hero-image">
-      <img src="images/hero-image.jpg" alt="Imagen de Naturaleza">
+    <div class="hero-content">
+      <h2>Actúa Hoy para un Mejor Mañana</h2>
+      <p>La huella de carbono es uno de los mayores desafíos que enfrenta nuestro planeta. ¡Comienza a reducirla hoy y haz la diferencia por el futuro!</p>
     </div>
   </section>
 
-  <section class="calculator">
-    <h2>Calcula tu Huella de Carbono</h2>
-    <form id="carbonForm">
-      <input type="text" id="urlInput" placeholder="Ingresa la URL de tu página web" required>
-      <button type="submit">Calcular</button>
-    </form>
-    <div id="carbonOutput" class="results"></div>
+  <!-- Calculator Section -->
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-container">
+      <h2>Calcula tu Huella de Carbono</h2>
+      <form id="carbonForm">
+        <input id="urlInput" type="text" placeholder="Ingresa la URL de tu página web" required>
+        <button type="submit" class="btn">Calcular</button>
+      </form>
+      <div id="carbonOutput" class="result-box">
+        <p>El resultado aparecerá aquí.</p>
+      </div>
+    </div>
   </section>
-  
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    const carbonForm = document.getElementById('carbonForm');
+    const carbonOutput = document.getElementById('carbonOutput');
+
+    carbonForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const url = document.getElementById('urlInput').value;
+      if (url) {
+        const randomResult = Math.floor(Math.random() * 100) + 1;
+        carbonOutput.innerHTML = `Tu huella de carbono es de <strong>${randomResult} kg CO₂</strong>.`;
+        carbonOutput.style.display = 'block';
+      } else {
+        carbonOutput.innerHTML = 'Por favor, ingresa una URL válida.';
+        carbonOutput.style.display = 'block';
+      }
+    });
+  </script>
+
 </body>
 </html>

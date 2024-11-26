@@ -1,142 +1,124 @@
-/* Manteniendo el diseño general del cuerpo */
+/* General body styles */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-/* Header */
+/* Header Styles */
 header {
+  background-color: #2d3d2f; /* Fondo verde oscuro (igual que el footer) */
+  padding: 10px 20px; /* Reducir el padding para hacer la franja más delgada */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #2e7d32;
   color: white;
 }
 
-header .logo {
-  font-size: 1.5rem;
+header .logo-container h1 {
+  font-size: 24px;
+  color: white;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 }
 
-header .nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: white;
-}
-
-header .btn {
-  padding: 0.5rem 1rem;
-  background-color: #ffd600;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+header nav ul li a:hover {
+  color: #f4f4f4;
 }
 
 /* Hero Section */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #e8f5e9;
+  background-image: url('https://via.placeholder.com/1500x500'); /* Aquí puedes poner la URL de tu imagen */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-.hero-text {
-  text-align: left;
-}
-
-.hero-image img {
-  width: 100%;
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para mejorar legibilidad */
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
   border-radius: 10px;
 }
 
-.hero .btn {
-  margin-top: 1rem;
-  padding: 0.7rem 1.2rem;
-  background-color: #2e7d32;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Features Section */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #f1f8e9;
-}
-
-.feature {
-  text-align: center;
-  padding: 1rem;
-  border: 1px solid #c5e1a5;
-  border-radius: 10px;
-  background-color: white;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #2e7d32;
-  color: white;
-}
-
-/* Formulario de Cálculo */
-.calculator {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f9fbe7;
-  margin: 2rem auto;
-  border-radius: 10px;
-  max-width: 600px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.calculator h2 {
-  color: #2e7d32;
-  margin-bottom: 1rem;
-}
-
-#carbonForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-#carbonForm input {
-  padding: 0.8rem;
-  width: 80%;
-  max-width: 500px;
-  border: 1px solid #c5e1a5;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-#carbonForm button {
-  padding: 0.7rem 1.5rem;
-  background-color: #2e7d32;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-#carbonForm button:hover {
-  background-color: #1b5e20;
-}
-
-.results {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+.hero h2 {
+  font-size: 48px;
   font-weight: bold;
+  color: #4CAF50; /* Verde */
+}
+
+.hero p {
+  font-size: 20px;
+  color: white;
+}
+
+/* Calculator Section */
+.calculator-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.calculator-container {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calculator-container input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+}
+
+.calculator-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.calculator-container button:hover {
+  background-color: #45a049;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #dcedc8;
+  border-radius: 5px;
+  display: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #2d3d2f; /* Fondo verde oscuro (igual que el header) */
+  color: white;
+  text-align: center;
+  padding: 10px 20px; /* Reducir el padding para hacerlo más delgado */
 }
