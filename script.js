@@ -1,8 +1,8 @@
 document.getElementById('carbonForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Evita el envío del formulario y el recargo de la página
   
-    const urlInput = document.getElementById('urlInput').value;
-    const carbonOutput = document.getElementById('carbonOutput');
+    const urlInput = document.getElementById('urlInput').value; // Captura la URL ingresada
+    const carbonOutput = document.getElementById('carbonOutput'); // Selecciona el área de resultados
   
     // Validar formato de URL
     const urlRegex = /^(https?:\/\/)?([\w.-]+)+\.[a-z]{2,}(\/\S*)?$/i;
@@ -17,7 +17,7 @@ document.getElementById('carbonForm').addEventListener('submit', function (e) {
     carbonOutput.style.color = 'black';
   
     setTimeout(() => {
-      const simulatedResult = Math.random().toFixed(2) * 100;
+      const simulatedResult = (Math.random() * 100).toFixed(2); // Genera un resultado simulado
       carbonOutput.textContent = `Tu huella de carbono estimada es de ${simulatedResult} kg CO₂e.`;
       carbonOutput.style.color = 'green';
     }, 2000);

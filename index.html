@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Calcula Tu Huella de Carbono</title>
+  <title>Reduce Tu Huella de Carbono</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="header">
-    <div class="logo">EcoFuture</div>
+    <div class="logo">Eco-Check</div>
     <nav class="nav">
       <a href="#about">Sobre Nosotros</a>
       <a href="#solutions">Soluciones</a>
@@ -22,26 +22,22 @@
       <button class="btn">Empieza Ahora</button>
     </div>
     <div class="hero-image">
-      <img src="images/descarga.jfif" alt="Imagen de Naturaleza">
+      <img src="images/hero-image.jpg" alt="Imagen de Naturaleza">
     </div>
   </section>
 
-  <!-- Nuevo Formulario para Calcular Huella -->
-  <section class="calculator" id="calculator">
-    <h2>Calcula Tu Huella de Carbono</h2>
+  <section class="calculator">
+    <h2>Calcula tu Huella de Carbono</h2>
     <form id="carbonForm">
-      <label for="urlInput">Ingresa la URL de tu sitio:</label>
-      <input type="url" id="urlInput" name="urlInput" placeholder="https://ejemplo.com" required>
-      <button type="submit" class="btn">Calcular</button>
+      <input type="text" id="urlInput" placeholder="Ingresa la URL de tu página web" required>
+      <button type="submit">Calcular</button>
     </form>
-    <div id="results" class="results">
-      <h3>Resultados:</h3>
-      <p id="carbonOutput">Los resultados aparecerán aquí...</p>
-    </div>
+    <div id="carbonOutput" class="results"></div>
   </section>
+  
 
   <footer class="footer">
-    <p>&copy; 2024 EcoFuture. Todos los derechos reservados.</p>
+    <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
