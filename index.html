@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
-  <title>Reduce Tu Huella de Carbono</title>
+  <title>Calcula Tu Huella de Carbono</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
   <header class="header">
     <div class="logo">EcoFuture</div>
     <nav class="nav">
@@ -17,7 +15,6 @@
     </nav>
   </header>
 
-  
   <section class="hero">
     <div class="hero-text">
       <h1>Actúa Hoy para un Mañana Mejor</h1>
@@ -29,25 +26,24 @@
     </div>
   </section>
 
-  
-  <section class="features">
-    <div class="feature">
-      <h2>Cálculo de Huella</h2>
-      <p>Te ayudamos a medir tu impacto ambiental en pocos pasos.</p>
-    </div>
-    <div class="feature">
-      <h2>Soluciones Verdes</h2>
-      <p>Descubre estrategias prácticas para reducir tu huella de carbono.</p>
-    </div>
-    <div class="feature">
-      <h2>Educación Ambiental</h2>
-      <p>Aprende cómo tus acciones cotidianas pueden salvar el planeta.</p>
+  <!-- Nuevo Formulario para Calcular Huella -->
+  <section class="calculator" id="calculator">
+    <h2>Calcula Tu Huella de Carbono</h2>
+    <form id="carbonForm">
+      <label for="urlInput">Ingresa la URL de tu sitio:</label>
+      <input type="url" id="urlInput" name="urlInput" placeholder="https://ejemplo.com" required>
+      <button type="submit" class="btn">Calcular</button>
+    </form>
+    <div id="results" class="results">
+      <h3>Resultados:</h3>
+      <p id="carbonOutput">Los resultados aparecerán aquí...</p>
     </div>
   </section>
 
-  
   <footer class="footer">
     <p>&copy; 2024 EcoFuture. Todos los derechos reservados.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
