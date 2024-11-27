@@ -1,79 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eco-Check</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Check</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo-container">
+        <h1>Eco-Check</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#solutions">Soluciones</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#calculator" class="btn">Calcula Tu Huella</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <div class="logo-container">
-      <h1>Eco-Check</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2> ¡Conoce la huella de carbono de un sitio web! </h2>
+        <p>
+          La huella de carbono es uno de los mayores desafíos que enfrenta
+          nuestro planeta, enterate como los sitios web aportan a la producion de Co2 
+        </p>
+        <div class="card">
+          <div>
+            <h1>Número de visitas</h1>
+            <p>El tráfico de un sitio web o tanbien llamado número de visitas es crucial, ya que cada vez que un visitante carga una página web, se consume energía para transferir los datos y cargar los recursos (imágenes, scripts, etc.) ven y conoce como obtener este dato</p>
+          </div>
+          <div>
+            <h1>Tamaño de la página web:</h1>
+            <p>El tamaño de la página web, medido en megabytes (MB), influye en la cantidad de datos que deben ser transferidos. Cuanto más grande es la página, más energía se necesita para cargarla.</p>
+          </div>
+          <div>
+            <h1>Factor de emisión:</h1>
+            <p>El factor de emisión es una estimación de cuántos gramos de CO₂ se emiten por cada megabyte (MB) de datos transferidos. Este factor puede variar dependiendo de la fuente de energía utilizada por los centros de datos que alojan el sitio web. Por ejemplo, si un centro de datos utiliza energía proveniente de combustibles fósiles, el factor de emisión será más alto que si utiliza energía renovable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="calculator">
+      <h1>Calcula la Huella de Carbono de tu Sitio Web</h1>
+
+      <div class="input-group">
+        <label for="tamanio-pagina">Tamaño de la Página (MB):</label>
+        <input type="number" id="tamanio-pagina" placeholder="Ej. 2" />
+      </div>
+
+      <div class="input-group">
+        <label for="trafico-web">Tráfico Web Mensual (visitas):</label>
+        <input type="number" id="trafico-web" placeholder="Ej. 10000" />
+      </div>
+
+      <div class="input-group">
+        <label for="factor-emision">Factor de Emisión (g CO₂ por MB):</label>
+        <input type="number" id="factor-emision" placeholder="Ej. 5" />
+      </div>
+
+      <button onclick="calcularHuella()">Calcular Huella de Carbono</button>
+
+      <div id="resultado">
+        <h2>Resultado:</h2>
+        <p id="resultado-texto">
+          Introduce los datos para calcular la huella de carbono.
+        </p>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#solutions">Soluciones</a></li>
-        <li><a href="#contact">Contacto</a></li>
-        <li><a href="#calculator" class="btn">Calcula Tu Huella</a></li>
-      </ul>
-    </nav>
-  </header>
 
- <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h2>Actúa Hoy para un Mejor Mañana</h2>
-    <p>La huella de carbono es uno de los mayores desafíos que enfrenta nuestro planeta. ¡Comienza a reducirla hoy y haz la diferencia por el futuro!</p>
-    <img src="images/huellaco2.png" alt="Imagen hero" class="hero-image">
-  </div>
-</section>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
+    </footer>
 
-<!-- Calculator Section -->
-<section id="calculator" class="calculator-section">
-  <div class="calculator-container">
-    <h2>Calcula tu Huella de Carbono</h2>
-    <form id="carbonForm">
-      <input id="urlInput" type="text" placeholder="Ingresa la URL de tu página web" required>
-      <button type="submit" class="btn">Calcular</button>
-    </form>
-    <div id="carbonOutput" class="result-box">
-      <p>El resultado aparecerá aquí.</p>
-    </div>
-    <!-- Agregar una imagen adicional si lo deseas -->
-    <img src="images/calculadoras.png" alt="Imagen calculadora" class="calculator-image">
-  </div>
-</section>
-
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    const carbonForm = document.getElementById('carbonForm');
-    const carbonOutput = document.getElementById('carbonOutput');
-
-    carbonForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const url = document.getElementById('urlInput').value;
-      if (url) {
-        const randomResult = Math.floor(Math.random() * 100) + 1;
-        carbonOutput.innerHTML = `Tu huella de carbono es de <strong>${randomResult} kg CO₂</strong>.`;
-        carbonOutput.style.display = 'block';
-      } else {
-        carbonOutput.innerHTML = 'Por favor, ingresa una URL válida.';
-        carbonOutput.style.display = 'block';
-      }
-    });
-  </script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
