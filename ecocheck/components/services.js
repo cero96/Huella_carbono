@@ -38,7 +38,7 @@ async function getCo2ByIp() {
         const response = await fetch(urlApi);
 
         if (!response.ok) {
-            throw new Error(`Error en API de CO2: ${response.status} - ${response.statusText}`);
+            throw new Error(`Error en API de CO2 por g: ${response.status} - ${response.statusText}`);
         }
 
         const data = await response.json();
