@@ -15,5 +15,5 @@ function calcularHuella() {
     const huellaCarbonoKg = huellaCarbonoGramos / 1000; // Convertir de gramos a kilogramos
 
     // Mostrar el resultado
-    document.getElementById('resultado-texto').textContent = `La huella de carbono mensual es de: ${huellaCarbonoKg.toFixed(2)} kg CO₂`;
+    document.getElementById('resultado-texto').textContent = `La huella de por cada arbono mensual es de: ${huellaCarbonoKg.toFixed(2)} kg CO₂`;
 }
