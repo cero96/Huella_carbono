@@ -176,9 +176,9 @@ button:hover {
 
 /* Estilo para el resultado dentro de un círculo */
 #resultado {
-  margin-top: 600px;
+  margin-top: 450px;
   position: absolute;
-  right: 60px;
+  right: 80px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #76c692;
