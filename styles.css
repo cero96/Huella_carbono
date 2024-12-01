@@ -22,7 +22,7 @@ body {
 /* Estilo para el contenedor del Header */
 header {
   background: linear-gradient(135deg, rgba(75, 159, 106, 0.9), rgba(75, 159, 106, 0.7)); /* Degradado verde */
-  padding: 10px 20px;
+  padding: 1px;
   color: white;
   width: 100%;
   text-align: center;
@@ -35,6 +35,7 @@ header {
 header h1 {
   font-size: 1.8rem;
   margin: 0;
+  text-align: left;
 }
 
 /* Navegación */
@@ -58,7 +59,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #66B984; /* Verde claro */
+  background-image: linear-gradient(45deg, rgba(102, 185, 132, 0.7), rgba(102, 185, 132, 0.3)); /* Degradado verde claro con transparencia */
   border-radius: 5px;
 }
 
@@ -68,21 +69,27 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
-  background-color: #E9F7E6; /* Verde muy claro */  
+  padding: 90px ; /* Padding alrededor del contenido */
+  background-image: url('/images/server-dark-computer-data-center-wallpaper-preview.jpg'); /* Ruta de la imagen */
+  background-size: cover;  /* La imagen cubrirá todo el área de la sección */
+  background-position: center; /* La imagen se centrará en la sección */
+  background-repeat: no-repeat ;* Evita que la imagen se repita */
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .section.url-section h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #f9f9f9;
+  text-align: center;
 }
 
 .section.url-section p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  color: #48b10b;
+  text-align: center;
 }
 
 .section.url-section input,
@@ -93,10 +100,13 @@ nav ul li a:hover {
   border-radius: 5px;
   font-size: 1rem;
   margin-bottom: 20px;
+  text-align: center;
+  
 }
 
 .section.url-section input {
   border: 2px solid #4B9F6A; /* Verde medio */
+  align-items: center;
 }
 
 .section.url-section button {
@@ -112,22 +122,26 @@ nav ul li a:hover {
 
 /* Sección Resultados */
 .result-section {
-  padding: 60px;
-  background-color: #4B9F6A; /* Verde medio */
   width: 100%;
+  padding: 60px 20px;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  background-image: url('/images/bulb-2287759_640.jpg'); /* Ruta de la imagen */
+  background-size: cover;  /* La imagen cubrirá todo el área de la sección */
+  background-position: center; /* La imagen se centrará en la sección */
+  background-repeat: no-repeat ;* Evita que la imagen se repita */
+  
 }
 
 .result-section h1 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #f9f9f9;
 }
 
 .result-section #result {
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-image: linear-gradient(45deg, rgba(249, 249, 249, 0.5), rgba(249, 249, 249, 0.3)); /* Degradado transparente con color #f9f9f9 */
+  padding: 80px;
   border-radius: 5px;
   margin-top: 20px;
 }
@@ -144,8 +158,11 @@ nav ul li a:hover {
 /* Sección de Tips y Soluciones */
 .tips-section {
   width: 100%;
-  background-color: #E9F7E6; /* Verde muy claro */
-  padding: 60px 20px;
+  background-image: url('images/wallpaperbetter.jpg'); /* Ruta de la imagen */
+  background-size: cover;  /* La imagen cubrirá todo el área de la sección */
+  background-position: center; /* La imagen se centrará en la sección */
+  background-repeat: no-repeat ;* Evita que la imagen se repita */
+    padding: 60px 20px;
   text-align: center;
   height: 100%; /* Asegura que el contenido se ajusta a su tamaño */
 }
@@ -153,6 +170,7 @@ nav ul li a:hover {
 .tips-section h1 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #f9f9f9;
 }
 
 .cards-container {
@@ -166,7 +184,7 @@ nav ul li a:hover {
 .tip-card {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-image: linear-gradient(45deg, rgba(249, 249, 249, 0.5), rgba(249, 249, 249, 0.3)); /* Degradado transparente con color #f9f9f9 */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

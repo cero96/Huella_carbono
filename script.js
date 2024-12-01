@@ -1,3 +1,4 @@
+
 async function obtenerDatosURL() {
   const url = document.getElementById('url-input').value;
 
@@ -6,23 +7,35 @@ async function obtenerDatosURL() {
     return;
   }
 
-  const encodedURL = encodeURIComponent(url);
+  const encodedURL = encodeURIComponent(url);  // Aseguramos la codificación de la URL
 
   try {
-    const proxyUrl = 'https://api.allorigins.win/get?url=';
-    const apiUrl = `https://api.websitecarbon.com/site?url=${encodedURL}`;
+    const proxyUrl = 'https://api.allorigins.win/get?url=';  // Proxy para evitar problemas de CORS
+    const apiUrl = `https://api.websitecarbon.com/site?url=${encodedURL}`; // API original que queremos consultar
 
-    // Utiliza el proxy para evitar el error CORS
-    const response = await axios.get(proxyUrl + encodeURIComponent(apiUrl));
-    
-    const data = JSON.parse(response.data.contents);  // Se debe parsear la respuesta de All Origins.
+    // Usamos el proxy para realizar la solicitud, añadiendo la URL codificada
+    const response = await axios.get(proxyUrl + encodeURIComponent(apiUrl), {
+      timeout: 20000 // Establecemos el tiempo de espera a 20 segundos
+    });
+
+    const data = JSON.parse(response.data.contents);  // Parseamos la respuesta obtenida del proxy
     
     // Verificar la respuesta de la API
     console.log('Respuesta de la API:', data);
 
     mostrarResultado(data);
   } catch (error) {
-    console.error('Error al obtener los datos de la API:', error.response ? error.response.data : error.message);
+    if (error.response) {
+      // Error relacionado con la respuesta de la API
+      console.error('Error al obtener los datos de la API:', error.response.data);
+    } else if (error.request) {
+      // Error de solicitud, la respuesta no fue recibida
+      console.error('No se recibió respuesta de la API:', error.request);
+    } else {
+      // Otro tipo de error
+      console.error('Error en la configuración de la solicitud:', error.message);
+    }
+
     document.getElementById('resultado-texto').innerHTML = 'Hubo un error al obtener los datos. Intenta nuevamente.';
   }
 }
@@ -64,11 +77,11 @@ function mostrarImagenes(emitido) {
   let cantidadImagenes = 0;
   
   // Determinar el número de imágenes a mostrar en función del valor de las emisiones
-  if (huellaCarbono <= 100) {
+  if (huellaCarbono <= 50) {
     cantidadImagenes = 1; // Un rango bajo
-  } else if (huellaCarbono > 100 && huellaCarbono <= 200) {
+  } else if (huellaCarbono > 50 && huellaCarbono <= 100) {
     cantidadImagenes = 5; // Un rango medio
-  } else if (huellaCarbono > 200) {
+  } else if (huellaCarbono > 100) {
     cantidadImagenes = 10; // Un rango alto
   }
 
@@ -81,5 +94,3 @@ function mostrarImagenes(emitido) {
     imagenesContenedor.appendChild(img);
   }
 }
-
-// Ejemplo de código HTML para agregar el contenedor de imágenes en el documento
