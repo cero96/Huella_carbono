@@ -13,7 +13,7 @@
 
 ## Características
 
-- **Cálculo de huella de carbono**: Calcula la huella de carbono de un sitio web en función de su tamaño y tráfico mensual.
+- **Cálculo de huella de carbono**: Calcular la huella de carbono de un sitio web en función de su tamaño y tráfico mensual.
 - **Soluciones ambientales**: Proporciona recomendaciones para reducir la huella de carbono de los sitios web mediante prácticas sostenibles.
 - **Interfaz de usuario sencilla**: Interfaz intuitiva y fácil de usar para cualquier usuario que desee conocer el impacto ambiental de su sitio web.
 - **Contacto**: Sección para que los usuarios puedan contactar a los desarrolladores del proyecto para más información o ayuda.
@@ -30,4 +30,4 @@
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone 
+   git clone https://github.com/cero96/Huella_carbono.git
