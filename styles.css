@@ -9,395 +9,304 @@
 /* Fuente global */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #e8f8e5;
+  background-color: #E9F7E6; /* Verde muy claro */
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe todo el alto */
+  margin: 0;
 }
 
-/* Contenedor del Header */
+/* Estilo para el contenedor del Header */
 header {
-  background-color: #2d8e4f; /* Verde oscuro */
-  padding: 5px;
+  background: linear-gradient(135deg, rgba(75, 159, 106, 0.9), rgba(75, 159, 106, 0.7)); /* Degradado verde */
+  padding: 10px 20px;
   color: white;
   width: 100%;
   text-align: center;
+  position: sticky; /* Fija el header en la parte superior */
+  top: 0;
+  z-index: 1000; /* Asegura que el encabezado esté por encima del contenido */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-/* Estilos para el logo */
-.contenedor-logo h1 {
-  font-size: 1rem;
-  text-align: left;
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
 }
 
 /* Navegación */
-header.full-view {
-  position: sticky;  /* Hace que el header se quede fijo en la parte superior */
-  top: 0;            /* Asegura que el header esté siempre en la parte superior */
-  background-color: #4d7159; /* Fondo oscuro para el encabezado */
-  z-index: 1000;     /* Asegura que el encabezado se quede por encima del contenido */
-}
-
 nav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  padding: 1px 0;
+  padding: 0; /* Elimina padding para evitar espacio */
+  margin: 0; /* Elimina márgenes entre los elementos */
 }
 
 nav ul li {
-  margin: 0 1px;
+  margin: 0 15px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
-  padding: 20px;
-}
-
-/* Sección Hero */
-.seccion-hero {
-  background-color: #e8f8e5;
-  padding: 60px 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.seccion-hero h2 {
-  color: #2d8e4f;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.seccion-hero p {
   font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 30px;
+  padding: 10px 15px;
+}
+
+nav ul li a:hover {
+  background-color: #66B984; /* Verde claro */
+  border-radius: 5px;
 }
 
 /* Sección URL */
-.seccion-url {
-  margin-bottom: 100px;
+.section.url-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: 50px;
+  background-color: #E9F7E6; /* Verde muy claro */  
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.seccion-url input {
-  padding: 12px;
-  width: 90%;
-  max-width: 400px;
-  border: 2px solid #2d8e4f;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #333;
-  background-color: #f0f0f0;
-  transition: border-color 0.3s ease;
+.section.url-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section.url-section p {
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
 
-.seccion-url input:focus {
-  border-color: #1f7036;
-  background-color: #ffffff;
-}
-
-.seccion-url button {
-  padding: 12px 25px;
-  background-color: #2d8e4f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
+.section.url-section input,
+.section.url-section button {
+  padding: 12px;
   width: 90%;
   max-width: 400px;
-  transition: background-color 0.3s ease;
-}
-
-.seccion-url button:hover {
-  background-color: #1f7036;
-}
-
-
-/* Sección Calculadora */
-.calculadora {
-  background-color: #ffffff;
-  padding: 40px 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.calculadora h1 {
-  color: #2d8e4f;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.input-group {
-  margin-bottom: 15px;
-}
-
-.input-group label {
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-.input-group input,
-.input-group select {
-  padding: 15px;
-  width: 80%;
-  max-width: 300px;
-  border: 2px solid #2d8e4f;
   border-radius: 5px;
   font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #2d8e4f;
+.section.url-section input {
+  border: 2px solid #4B9F6A; /* Verde medio */
+}
+
+.section.url-section button {
+  background-color: #4B9F6A; /* Verde medio */
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
   cursor: pointer;
-  margin-top: 30px;
 }
 
-button:hover {
-  background-color: #1f7036;
+.section.url-section button:hover {
+  background-color: #3D8A57; /* Verde más oscuro */
 }
 
-/* Estilo para el resultado dentro de un círculo */
-#resultado {
-  margin-top: 450px;
-  position: absolute;
-  right: 80px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #76c692;
-  color: white;
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-
-
-
-#resultado h2 {
-  font-size: 1.5rem;
-  color: white;
-  margin: 0;
-}
-
-
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .calculadora {
-    padding: 20px 10px;
-  }
-
-  .input-group input,
-  .input-group select {
-    width: 90%;
-    max-width: 280px;
-  }
-
-  button {
-    width: 100%;
-    font-size: 1.1rem;
-  }
-
-  #resultado {
-    width: 200px;
-    height: 200px;
-    right: 20px;
-  }
-
-  header {
-    padding: 10px;
-  }
-
-  nav ul {
-    flex-direction: column; /* Coloca los enlaces en columna en pantallas pequeñas */
-  }
-}
-/* Sección Cards */
-.seccion-cards {
-  display: flex;               
-  justify-content: space-around; 
-  flex-wrap: wrap;             
-  gap: 20px;                   
-  width: 100%;                 
-  text-align: center; 
-  padding: 40px 20px;         
-}
-.seccion-cards h1 {
-  color: #2d8e4f;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-/* Sección Cards (Soluciones) */
-.seccion-cards {
-  display: flex;
-  justify-content: space-around; 
-  flex-wrap: wrap; 
-  gap: 20px; 
-}
-
-.card-item {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 30%; 
-  padding: 20px;
-  box-sizing: border-box; 
-  transition: transform 0.3s ease; 
-}
-
-/* Estilo para las imágenes dentro de las tarjetas */
-.card-item img {
+/* Sección Resultados */
+.result-section {
+  padding: 60px;
+  background-color: #4B9F6A; /* Verde medio */
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Estilo para los títulos dentro de las tarjetas */
-.card-item h3 {
-  color: #2d8e4f;
-  font-size: 1.5rem;
-  margin-top: 15px;
-}
-
-/* Estilo para los párrafos dentro de las tarjetas */
-.card-item p {
-  color: #777;
-  font-size: 1rem;
-}
-
-/* Efecto al pasar el mouse sobre las tarjetas */
-.card-item:hover {
-  transform: scale(1.05);
-}
-
-/* Diseño Responsivo para pantallas medianas */
-@media screen and (max-width: 1024px) {
-  .card-item {
-    width: 45%; /* 2 tarjetas por fila en pantallas medianas */
-  }
-}
-
-/* Diseño Responsivo para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-  .card-item {
-    width: 80%; /* 1 tarjeta por fila en pantallas pequeñas */
-    margin: 15px 0;
-  }
-}
-
-/* Diseño Responsivo para pantallas muy pequeñas */
-@media screen and (max-width: 480px) {
-  .card-item {
-    width: 100%; /* 1 tarjeta por fila en pantallas muy pequeñas */
-    margin: 10px 0;
-  }
-}
-
-/* Sección Contacto */
-#contacto {
-  background-color: #ffffff;
-  padding: 40px 20px;
   text-align: center;
-  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#contacto h2 {
+.result-section h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.cardh1{
-  color: #2d8e4f;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  
+.result-section #result {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-.contactos-container {
+.result-section #result h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.result-section #result-text {
+  font-size: 1.2rem;
+}
+
+/* Sección de Tips y Soluciones */
+.tips-section {
+  width: 100%;
+  background-color: #E9F7E6; /* Verde muy claro */
+  padding: 60px 20px;
+  text-align: center;
+  height: 100%; /* Asegura que el contenido se ajusta a su tamaño */
+}
+
+.tips-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cards-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 0; /* Elimina el margen superior */
 }
 
-.contacto-card {
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  padding: 2px;  
-  max-width: 300px;
+.tip-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  width: 250px;
 }
 
-.contacto-card:hover {
-  transform: scale(1.05);
+.tip-card img {
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 10px;
 }
 
-.foto-contacto {
-  width: 150px;
-  height: 150px;
+.tip-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.tip-card p {
+  font-size: 1rem;
+}
+.botonCard {
+  background-color: #4B9F6A; /* Verde medio */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px; /* Añadir espacio interior */
+  font-size: 16px; /* Tamaño de texto */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición suave para cambios de estilo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  text-align: center;
+}
+
+.botonCard:hover {
+  background-color: #3e7e52; /* Cambiar el color al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentar sombra al hacer hover */
+  transform: translateY(-2px); /* Mover ligeramente el botón hacia arriba */
+}
+
+.botonCard:active {
+  background-color: #356d48; /* Cambiar el color al hacer clic */
+  transform: translateY(0); /* Eliminar el efecto de movimiento al hacer clic */
+}
+
+/* Sección de Contacto */
+.contact-section {
+  width: 100%;
+  background-color: #4B9F6A; /* Verde medio */
+  padding: 60px 20px;
+  text-align: center;
+  height: 100%; /* Asegura que el contenido se ajusta a su tamaño */
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 0; /* Elimina el margen superior */
+}
+
+.contact-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+}
+
+.contact-card img {
+  width: 100%;
+  max-width: 150px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  font-size: 1rem;
+}
+.imagenes-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tree-icon {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-}
-
-.contacto-card h3 {
-  font-size: 1rem;
-  margin-bottom:2px;
-}
-
-.contacto-card p {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom:2px
-}
-
-.contacto-card strong {
-  font-weight: bold;
 }
 
 /* Footer */
 footer {
-  background-color: #4d7159;
-  color: white;
   text-align: center;
   padding: 15px;
-  font-size: 1rem;
+  background-color: #E9F7E6; /* Verde muy claro */
+  color: rgb(0, 0, 0);
   width: 100%;
+  margin-top: auto; /* Asegura que el footer se quede en la parte inferior */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-/* Media Queries Adicionales para mejorar la responsividad */
-@media (max-width: 1200px) {
-  .card-item {
-    width: 30%; /* Ajusta el ancho a 30% en pantallas más grandes */
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 992px) {
-  header, #contacto {
-    padding: 20px; /* Ajusta el padding del header y sección de contacto */
+  .cards-container, .contact-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section.url-section, .result-section, .tips-section, .contact-section {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .section.url-section input, .section.url-section button {
+    max-width: 100%;
   }
 }

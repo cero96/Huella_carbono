@@ -5,220 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco-Check</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- libreri ade iconos -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
-    <header class="full-view">
-      <div class="contenedor-logo">
+    <header class="header full-view">
+      <div class="logo-container">
         <h1>Eco-Check</h1>
       </div>
-      <nav>
+      <nav class="main-nav">
         <ul>
           <li>
-            <a href="#ingresa-url"
+            <a href="#url-section" class="nav-link"
               ><i class="fas fa-link"></i> Ingresa una URL</a
             >
           </li>
           <li>
-            <a href="#calculadora" class="btn"
-              ><i class="fas fa-calculator"></i> Calcula Tu Huella</a
+            <a href="#result-section" class="nav-link btn"
+              ><i class="fas fa-calculator"></i> Resultados</a
             >
           </li>
           <li>
-            <a href="#soluciones"
-              ><i class="fas fa-leaf"></i> Soluciones Ambientales</a
+            <a href="#tips-section" class="nav-link"
+              ><i class="fas fa-leaf"></i> Tips y Soluciones Ambientales</a
             >
           </li>
           <li>
-            <a href="#contacto"><i class="fas fa-phone-alt"></i> Contacto</a>
+            <a href="#contact-section" class="nav-link"
+              ><i class="fas fa-phone-alt"></i> Referencias</a
+            >
           </li>
         </ul>
       </nav>
     </header>
 
-    <!-- Sección Hero -->
-    <section class="seccion-hero full-view" id="ingresa-url">
-      <div class="contenido-hero">
-        <!-- Sección 1: Ingreso de URL dentro de la sección Hero -->
-        <section class="seccion-url">
-          <h2>¡Conoce la huella de carbono de un sitio web!</h2>          
-          <p>
-            Descubre cómo los sitios web contribuyen a la producción de CO2.
-          </p>
-          <h3>Ingresa la URL</h3>
-          <br />
-          <input
-            type="url"
-            id="url-input"
-            placeholder="Ej. https://www.ejemplo.com"
-          />
-          <button onclick="obtenerDatosURL()">Enviar Datos</button>
-        </section>
+    <!-- Sección 1: Ingresar URL -->
+    <section id="url-section" class="section url-section full-view">
+      <div class="section-content">
+        <h2>¡Conoce la huella de carbono de un sitio web!</h2>
+        <p>Descubre cómo los sitios web contribuyen a la producción de CO₂.</p>
+        <h3>Ingresa la URL del sitio web</h3>
+        <input
+          type="url"
+          id="url-input"
+          placeholder="Ej. https://www.ejemplo.com"
+        />
+        <button type="button" onclick="obtenerDatosURL()" class="btn-submit">
+          Enviar Datos
+        </button>
+      </div>
+    </section>
 
-        <section class="calculadora full-view" id="calculadora">
-          <h1>Calcula la Huella de Carbono</h1>
-          <br />
-
-          <div class="input-group">
-            <label for="tamanio-pagina">Tamaño de la Página (MB):</label>
-            <input type="number" id="tamanio-pagina" placeholder="Ej. 2" />
+    <!-- Sección 2: Resultados -->
+    <section id="result-section" class="section result-section full-view">
+      <div class="section-content">
+        <h1>La Huella de Carbono emitida por el Sitio Web es:</h1>
+        <div id="result">
+          <h2>Resultado</h2>
+          <p id="result-text">Cargando datos...</p>
+        </div>
+        <hr />
+        <div class="compensation-section">
+          <h1>Deberías plantar:</h1>
+          <div id="imagenes-container" class="imagenes-container">
+            
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="input-group">
-            <label for="trafico-web">Tráfico Web Mensual (visitas):</label>
-            <input type="number" id="trafico-web" placeholder="Ej. 10000" />
-          </div>
-
-          <div class="input-group">
-            <label for="factor-emision"
-              >Factor de Emisión (g CO₂ por MB):</label
-            >
-            <select id="hostResponsabilidad" name="hostResponsabilidad">
-              <option value="3">3 -Energías Limpias</option>
-              <option value="5">5 -Energía Fósil</option>
-            </select>
-          </div>
-
-          <button onclick="calcularHuella()">Calcular Huella de Carbono</button>
-
-          <div id="resultado">
-            <h2>Resultado:</h2>
-            <p id="resultado-texto">
-              Introduce los datos para calcular la huella de carbono.
+    <!-- Sección 3: Consejos y Soluciones -->
+    <section id="tips-section" class="section tips-section full-view">
+      <div class="section-content">
+        <h1>Sigue estos tips para mejorar tu Sitio Web</h1>
+        <div class="cards-container">
+          <div class="tip-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Solución 1"
+              class="tip-card-image"
+            />
+            <h3>Optimización de Imágenes</h3>
+            <p>
+              <strong>Descripción:</strong> Reducir el tamaño de las imágenes
+              puede ayudar a disminuir la carga.
             </p>
+            <button class="botonCard">Ir</button>
           </div>
-        </section>
 
-
-        <!-- Sección 2: Tarjetas de Soluciones -->
-        <section class="seccion-cards full-view" id="soluciones">
-          <h1>Soluciones para Reducir la Huella de Carbono</h1>
-
-          <!-- Contenedor de Tarjetas de Soluciones -->
-          <div class="contactos-container">
-            <!-- Solución 1 -->
-            <div class="contacto-card">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Solución 1"
-                class="foto-contacto"
-              />
-              <h3>Optimización de Imágenes</h3>
-              <p>
-                <strong>Descripción:</strong> Reducir el tamaño de las imágenes
-                puede ayudar a disminuir la carga y, por lo tanto, la huella de
-                carbono.
-              </p>
-              <button onclick="">Ingresar</button>
-            </div>
-
-            <!-- Solución 2 -->
-            <div class="contacto-card">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Solución 2"
-                class="foto-contacto"
-              />
-              <h3>Uso de Energía Renovable</h3>
-              <p>
-                <strong>Descripción:</strong> Fuentes de energía
-                renovables en los servidores puede reducir significativamente
-                las emisiones de CO₂.
-              </p>
-              <button onclick="">Ingresar</button>
-            </div>
-
-            <!-- Solución 3 -->
-            <div class="contacto-card">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Solución 3"
-                class="foto-contacto"
-              />
-              <h3>Minificación de Código</h3>
-              <p>
-                <strong>Descripción:</strong> Reducir el tamaño del código
-                JavaScript y CSS ayuda a mejorar el rendimiento y reduce la
-                huella de carbono.
-              </p>
-              <button onclick="">Ingresar</button>
-            </div>
+          <div class="tip-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Solución 2"
+              class="tip-card-image"
+            />
+            <h3>Uso de Energía Renovable</h3>
+            <p>
+              <strong>Descripción:</strong> Fuentes de energía renovables pueden
+              reducir significativamente las emisiones de CO₂.
+            </p>
+            <button class="botonCard">Ir</button>
           </div>
-        </section>
 
-        <!-- Sección Contacto -->
-        <section id="contacto">
-          <h1 class="cardh1">Contactanos</h1>
-         
-          <!-- Contenedor de Contactos -->
-          <div class="contactos-container">
-            <!-- Persona 1 -->
-            <div class="contacto-card">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Foto de Persona 1"
-                class="foto-contacto"
-              />
-              <h3>Juan Pérez</h3>
-              <p><strong>Cargo:</strong> Gerente de Proyecto</p>
-              <p><strong>Email:</strong> juan.perez@eco-check.com</p>
-              <p><strong>Teléfono:</strong> +1 234 567 890</p>
-              <p>
-                Juan es el responsable de coordinar todos los proyectos de
-                Eco-Check y está disponible para cualquier consulta relacionada
-                con las soluciones que ofrecemos.
-              </p>
-            </div>
-
-            <!-- Persona 2 -->
-            <div class="contacto-card">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Foto de Persona 2"
-                class="foto-contacto"
-              />
-              <h3>Ana Gómez</h3>
-              <p><strong>Cargo:</strong> Directora de Marketing</p>
-              <p><strong>Email:</strong> ana.gomez@eco-check.com</p>
-              <p><strong>Teléfono:</strong> +1 234 567 891</p>
-              <p>
-                Ana lidera todas las iniciativas de marketing y es la persona
-                indicada para responder dudas sobre cómo Eco-Check puede ayudar
-                a tu negocio a reducir su huella de carbono.
-              </p>
-            </div>
-
-            <!-- Persona 3 -->
-            <div class="contacto-card">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Foto de Persona 3"
-                class="foto-contacto"
-              />
-              <h3>Carlos Martínez</h3>
-              <p><strong>Cargo:</strong> Técnico de Soporte</p>
-              <p><strong>Email:</strong> carlos.martinez@eco-check.com</p>
-              <p><strong>Teléfono:</strong> +1 234 567 892</p>
-              <p>
-                Carlos está disponible para resolver cualquier duda técnica que
-                tengas sobre nuestra plataforma y cómo calcular la huella de
-                carbono de tu sitio web.
-              </p>
-            </div>
+          <div class="tip-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Solución 3"
+              class="tip-card-image"
+            />
+            <h3>Minificación de Código</h3>
+            <p>
+              <strong>Descripción:</strong> Reducir el tamaño del código
+              JavaScript y CSS ayuda a mejorar el rendimiento.
+            </p>
+            <button class="botonCard">Ir</button>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4: Contacto y Más Información -->
+    <section id="contact-section" class="section contact-section full-view">
+      <div class="section-content">
+        <h1>Encuentra más información en:</h1>
+        <div class="contact-cards-container">
+          <div class="contact-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Documento"
+              class="contact-card-image"
+            />
+            <h3>Documentacion Api</h3>
+            <p><strong>Link:</strong> Gerente de Proyecto</p>
+            <p><strong>Email:</strong> juan.perez@eco-check.com</p>
+          </div>
+          <div class="contact-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Persona 2"
+              class="contact-card-image"
+            />
+            <h3>Repositorio Git-Hub</h3>
+            <p><strong>Git clone:</strong> Directora de Marketing</p>
+            <p><strong>Email:</strong> ana.gomez@eco-check.com</p>
+            <p><strong>Teléfono:</strong> +1 234 567 891</p>
+          </div>
+          <div class="contact-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Persona 3"
+              class="contact-card-image"
+            />
+            <h3>Norma Iso 696969</h3>
+            <p><strong>Link:</strong> Técnico de Soporte</p>
+            <button class="botonCard">
+              <i class="fas fa-download"></i> Descargar
+            </button>
+            
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="full-view">
+    <footer class="footer full-view">
       <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Librerías -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
