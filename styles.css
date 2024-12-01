@@ -202,6 +202,7 @@ button:hover {
   margin: 0;
 }
 
+
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
   .calculadora {
