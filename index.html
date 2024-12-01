@@ -5,78 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco-Check</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- libreri ade iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="logo-container">
+    <header class="full-view">
+      <div class="contenedor-logo">
         <h1>Eco-Check</h1>
       </div>
       <nav>
         <ul>
-          <li><a href="#about">Sobre Nosotros</a></li>
-          <li><a href="#solutions">Soluciones</a></li>
-          <li><a href="#contact">Contacto</a></li>
-          <li><a href="#calculator" class="btn">Calcula Tu Huella</a></li>
+          <li>
+            <a href="#ingresa-url"
+              ><i class="fas fa-link"></i> Ingresa una URL</a
+            >
+          </li>
+          <li>
+            <a href="#calculadora" class="btn"
+              ><i class="fas fa-calculator"></i> Calcula Tu Huella</a
+            >
+          </li>
+          <li>
+            <a href="#soluciones"
+              ><i class="fas fa-leaf"></i> Soluciones Ambientales</a
+            >
+          </li>
+          <li>
+            <a href="#contacto"><i class="fas fa-phone-alt"></i> Contacto</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h2> ¡Conoce la huella de carbono de un sitio web! </h2>
-        <p>
-          La huella de carbono es uno de los mayores desafíos que enfrenta
-          nuestro planeta, enterate como los sitios web aportan a la producion de Co2 
-        </p>
-        <div class="card">
-          <div>
-            <h1>Número de visitas</h1>
-            <p>El tráfico de un sitio web o tanbien llamado número de visitas es crucial, ya que cada vez que un visitante carga una página web, se consume energía para transferir los datos y cargar los recursos (imágenes, scripts, etc.) ven y conoce como obtener este dato</p>
+    <!-- Sección Hero -->
+    <section class="seccion-hero full-view" id="ingresa-url">
+      <div class="contenido-hero">
+        <!-- Sección 1: Ingreso de URL dentro de la sección Hero -->
+        <section class="seccion-url">
+          <h2>¡Conoce la huella de carbono de un sitio web!</h2>          
+          <p>
+            Descubre cómo los sitios web contribuyen a la producción de CO2.
+          </p>
+          <h3>Ingresa la URL</h3>
+          <br />
+          <input
+            type="url"
+            id="url-input"
+            placeholder="Ej. https://www.ejemplo.com"
+          />
+          <button onclick="obtenerDatosURL()">Enviar Datos</button>
+        </section>
+
+        <section class="calculadora full-view" id="calculadora">
+          <h1>Calcula la Huella de Carbono</h1>
+          <br />
+
+          <div class="input-group">
+            <label for="tamanio-pagina">Tamaño de la Página (MB):</label>
+            <input type="number" id="tamanio-pagina" placeholder="Ej. 2" />
           </div>
-          <div>
-            <h1>Tamaño de la página web:</h1>
-            <p>El tamaño de la página web, medido en megabytes (MB), influye en la cantidad de datos que deben ser transferidos. Cuanto más grande es la página, más energía se necesita para cargarla.</p>
+
+          <div class="input-group">
+            <label for="trafico-web">Tráfico Web Mensual (visitas):</label>
+            <input type="number" id="trafico-web" placeholder="Ej. 10000" />
           </div>
-          <div>
-            <h1>Factor de emisión:</h1>
-            <p>El factor de emisión es una estimación de cuántos gramos de CO₂ se emiten por cada megabyte (MB) de datos transferidos. Este factor puede variar dependiendo de la fuente de energía utilizada por los centros de datos que alojan el sitio web. Por ejemplo, si un centro de datos utiliza energía proveniente de combustibles fósiles, el factor de emisión será más alto que si utiliza energía renovable.</p>
+
+          <div class="input-group">
+            <label for="factor-emision"
+              >Factor de Emisión (g CO₂ por MB):</label
+            >
+            <select id="hostResponsabilidad" name="hostResponsabilidad">
+              <option value="3">3 -Energías Limpias</option>
+              <option value="5">5 -Energía Fósil</option>
+            </select>
           </div>
-        </div>
+
+          <button onclick="calcularHuella()">Calcular Huella de Carbono</button>
+
+          <div id="resultado">
+            <h2>Resultado:</h2>
+            <p id="resultado-texto">
+              Introduce los datos para calcular la huella de carbono.
+            </p>
+          </div>
+        </section>
+
+        <!-- Sección 2: Tarjetas de Soluciones -->
+        <section class="seccion-cards full-view" id="soluciones">
+          <h1>Soluciones para Reducir la Huella de Carbono</h1>
+
+          <!-- Contenedor de Tarjetas de Soluciones -->
+          <div class="contactos-container">
+            <!-- Solución 1 -->
+            <div class="contacto-card">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Solución 1"
+                class="foto-contacto"
+              />
+              <h3>Optimización de Imágenes</h3>
+              <p>
+                <strong>Descripción:</strong> Reducir el tamaño de las imágenes
+                puede ayudar a disminuir la carga y, por lo tanto, la huella de
+                carbono.
+              </p>
+              <button onclick="">Ingresar</button>
+            </div>
+
+            <!-- Solución 2 -->
+            <div class="contacto-card">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Solución 2"
+                class="foto-contacto"
+              />
+              <h3>Uso de Energía Renovable</h3>
+              <p>
+                <strong>Descripción:</strong> Fuentes de energía
+                renovables en los servidores puede reducir significativamente
+                las emisiones de CO₂.
+              </p>
+              <button onclick="">Ingresar</button>
+            </div>
+
+            <!-- Solución 3 -->
+            <div class="contacto-card">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Solución 3"
+                class="foto-contacto"
+              />
+              <h3>Minificación de Código</h3>
+              <p>
+                <strong>Descripción:</strong> Reducir el tamaño del código
+                JavaScript y CSS ayuda a mejorar el rendimiento y reduce la
+                huella de carbono.
+              </p>
+              <button onclick="">Ingresar</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto">
+          <h1 class="cardh1">Contactanos</h1>
+          <br />
+
+          <!-- Contenedor de Contactos -->
+          <div class="contactos-container">
+            <!-- Persona 1 -->
+            <div class="contacto-card">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Foto de Persona 1"
+                class="foto-contacto"
+              />
+              <h3>Juan Pérez</h3>
+              <p><strong>Cargo:</strong> Gerente de Proyecto</p>
+              <p><strong>Email:</strong> juan.perez@eco-check.com</p>
+              <p><strong>Teléfono:</strong> +1 234 567 890</p>
+              <p>
+                Juan es el responsable de coordinar todos los proyectos de
+                Eco-Check y está disponible para cualquier consulta relacionada
+                con las soluciones que ofrecemos.
+              </p>
+            </div>
+
+            <!-- Persona 2 -->
+            <div class="contacto-card">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Foto de Persona 2"
+                class="foto-contacto"
+              />
+              <h3>Ana Gómez</h3>
+              <p><strong>Cargo:</strong> Directora de Marketing</p>
+              <p><strong>Email:</strong> ana.gomez@eco-check.com</p>
+              <p><strong>Teléfono:</strong> +1 234 567 891</p>
+              <p>
+                Ana lidera todas las iniciativas de marketing y es la persona
+                indicada para responder dudas sobre cómo Eco-Check puede ayudar
+                a tu negocio a reducir su huella de carbono.
+              </p>
+            </div>
+
+            <!-- Persona 3 -->
+            <div class="contacto-card">
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Foto de Persona 3"
+                class="foto-contacto"
+              />
+              <h3>Carlos Martínez</h3>
+              <p><strong>Cargo:</strong> Técnico de Soporte</p>
+              <p><strong>Email:</strong> carlos.martinez@eco-check.com</p>
+              <p><strong>Teléfono:</strong> +1 234 567 892</p>
+              <p>
+                Carlos está disponible para resolver cualquier duda técnica que
+                tengas sobre nuestra plataforma y cómo calcular la huella de
+                carbono de tu sitio web.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
-    <div class="calculator">
-      <h1>Calcula la Huella de Carbono de tu Sitio Web</h1>
-
-      <div class="input-group">
-        <label for="tamanio-pagina">Tamaño de la Página (MB):</label>
-        <input type="number" id="tamanio-pagina" placeholder="Ej. 2" />
-      </div>
-
-      <div class="input-group">
-        <label for="trafico-web">Tráfico Web Mensual (visitas):</label>
-        <input type="number" id="trafico-web" placeholder="Ej. 10000" />
-      </div>
-
-      <div class="input-group">
-        <label for="factor-emision">Factor de Emisión (g CO₂ por MB):</label>
-        <input type="number" id="factor-emision" placeholder="Ej. 5" />
-      </div>
-
-      <button onclick="calcularHuella()">Calcular Huella de Carbono</button>
-
-      <div id="resultado">
-        <h2>Resultado:</h2>
-        <p id="resultado-texto">
-          Introduce los datos para calcular la huella de carbono.
-        </p>
-      </div>
-    </div>
-
     <!-- Footer -->
-    <footer>
+    <footer class="full-view">
       <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
     </footer>
 
