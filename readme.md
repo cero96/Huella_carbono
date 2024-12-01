@@ -30,4 +30,4 @@
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu-usuario/eco-check.git
+   git clone https://github.com/cero96/Huella_carbono.git
