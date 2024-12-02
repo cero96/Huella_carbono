@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Interactivo</title>
+    <link rel="stylesheet" href="style_blog.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <h1>Mi Blog</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/huella_carbono/index.html">
+                        <button class="botonCard">Volver</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="blog-post">
+            <div class="post-header">
+                <h1>Optimización de Imágenes</h1>
+                <p>Publicado el <strong>1 de diciembre de 2024</strong></p>
+            </div>
+            <div class="post-content">
+                <h2>Descripción</h2>
+                <p>
+                    La optimización de imágenes es un proceso que consiste en reducir el tamaño de los archivos de imágenes sin perder su calidad visual. Esto se hace para que las imágenes se carguen más rápido en los sitios web, lo que mejora la experiencia del usuario y el rendimiento de la página.
+                </p>
+
+                <h3>Consejos para Optimizar Imágenes:</h3>
+                <ul>
+                    <li>Elegir imágenes de buena calidad y relevantes.</li>
+                    <li>Considerar el posicionamiento de la imagen y su importancia para el SEO.</li>
+                    <li>Tratar de perder la menor calidad posible al comprimir la imagen.</li>
+                    <li>Utilizar el tamaño justo para el espacio de la imagen.</li>
+                    <li>Cuidar el formato de la imagen.</li>
+                    <li>Ponerle al archivo de imagen un nombre relevante y legible.</li>
+                    <li>Incluir una etiqueta alt de la imagen breve y descriptiva.</li>
+                    <li>Hacer que las imágenes respondan bien y sean aptas para móviles.</li>
+                </ul>
+
+                <h3>Herramientas para Optimizar Imágenes:</h3>
+                <ol>
+                    <li>JPGmini: Reduce hasta cinco veces el peso de una fotografía sin perder demasiada calidad.</li>
+                    <li>Imagify Image Optimizer: Comprime las imágenes manteniendo su calidad.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="related-posts">
+            <h2>Artículos Relacionados:</h2>
+            <ul>
+                <li><a href="#">Cómo Mejorar la Velocidad de Carga en tu Web</a></li>
+                <li><a href="#">Uso Eficiente de Archivos SVG en Páginas Web</a></li>
+                <li><a href="#">Tendencias de Diseño Web para 2025</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Mi Blog. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts si es necesario para interactividad -->
+    <script>
+        // Mostrar mensaje cuando el usuario haga clic en un artículo relacionado
+        const relatedLinks = document.querySelectorAll('.related-posts a');
+        relatedLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert("Este es un artículo relacionado");
+            });
+        });
+    </script>
+</body>
+</html>

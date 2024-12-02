@@ -88,7 +88,7 @@ function mostrarImagenes(emitido) {
   // Crear y agregar las imágenes al contenedor
   for (let i = 0; i < cantidadImagenes; i++) {
     const img = document.createElement('img');
-    img.src = '/images/1.png'; // Cambia esto por la URL real de las imágenes
+    img.src = '/huella_carbono/images/1.png'; // Cambia esto por la URL real de las imágenes
     img.alt = 'Árbol'; // Cambia la descripción según corresponda
     img.classList.add('tree-icon');
     imagenesContenedor.appendChild(img);
