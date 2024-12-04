@@ -6,8 +6,8 @@ import TransitionPage from "@/components/transition-page";
 const ServicesPage = () => {
     return (
         <>
-
             <TransitionPage />
+            <div className="flex min-h-[100vh] h-full bg-no-repear bg-gradient-cover">
             <CircleImage />
             <AvatarServices />
             <div className="grid items-center justify-center h-screen max-w-5xl gap-6 mx-auto md:grid-cols-2 md:px-20">
@@ -22,6 +22,7 @@ const ServicesPage = () => {
                 <div>
                     {/* <SliderServices /> */}
                 </div>
+            </div>
             </div>
         </>
     );
