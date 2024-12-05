@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Check</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header full-view">
+      <div class="logo-container">
+        <h1>Eco-Check</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="#url-section" class="nav-link"
+              ><i class="fas fa-link"></i> Ingresa una URL</a
+            >
+          </li>
+          <li>
+            <a href="#result-section" class="nav-link btn"
+              ><i class="fas fa-calculator"></i> Resultados</a
+            >
+          </li>
+          <li>
+            <a href="#tips-section" class="nav-link"
+              ><i class="fas fa-leaf"></i> Tips y Soluciones Ambientales</a
+            >
+          </li>
+          <li>
+            <a href="#contact-section" class="nav-link"
+              ><i class="fas fa-phone-alt"></i> Referencias</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sección 1: Ingresar URL -->
+    <section id="url-section" class="section url-section full-view">
+      <div class="section-content">
+        <h2>¡Conoce la huella de carbono de un sitio web!</h2>
+        <p>Descubre cómo los sitios web contribuyen a la producción de CO₂.</p>
+        <h2>Ingresa la URL del sitio web</h2>
+        <input
+          type="url"
+          id="url-input"
+          placeholder="Ej. https://www.ejemplo.com"
+        />
+        <button type="button" onclick="obtenerDatosURL()" class="btn-submit">
+          Enviar Datos
+        </button>
+      </div>
+    </section>
+
+    <!-- Sección 2: Resultados -->
+    <section id="result-section" class="section result-section full-view">
+      <div class="section-content">
+        <h1>La Huella de Carbono emitida por el Sitio Web es:</h1>
+        <div id="result">
+          <h2>Resultado</h2>
+          <p id="result-text">Cargando datos...</p>
+        </div>
+        <hr />
+        <div class="compensation-section">
+          <h1>Esta página web deberia plantar , al año por lo menos :</h1>
+          <div id="imagenes-container" class="imagenes-container">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: Consejos y Soluciones -->
+    <section id="tips-section" class="section tips-section full-view">
+      <div class="section-content">
+        <h1>Sigue estos tips para mejorar tu Sitio Web</h1>
+        <div class="cards-container">
+          <div class="tip-card">
+            <img
+              src="/huella_carbono/images/optimi.jpeg"
+              alt="Solución 1"
+              class="tip-card-image"
+            />
+            <h3>Optimización de Imágenes</h3>
+            <p>
+              <strong>Descripción:</strong> Reducir el tamaño de las imágenes
+              puede ayudar a disminuir la carga.
+            </p>
+            <a href="/huella_carbono/blog_html/optimizacion.html">
+              <button class="botonCard">Ir</button>
+            </a>
+          </div>
+
+          <div class="tip-card">
+            <img
+              src="/huella_carbono/images/energi.jpeg"
+              alt="Solución 2"
+              class="tip-card-image"
+            />
+            <h3>Uso de Energía Renovable</h3>
+            <p>
+              <strong>Descripción:</strong> Fuentes de energía renovables pueden
+              reducir significativamente las emisiones de CO₂.
+            </p>
+            <a href="/huella_carbono/blog_html/energia.html">
+              <button class="botonCard">Ir</button>
+            </a>
+          </div>
+
+          <div class="tip-card">
+            <img
+              src="/huella_carbono/images/mini.png"
+              alt="Solución 3"
+              class="tip-card-image"
+            />
+            <h3>Minificación de Código</h3>
+            <p>
+              <strong>Descripción:</strong> Reducir el tamaño del código
+              JavaScript y CSS ayuda a mejorar el rendimiento.
+            </p>
+            <a href="/huella_carbono/blog_html/codigo.html">
+              <button class="botonCard">Ir</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4: Contacto y Más Información -->
+    <section id="contact-section" class="section contact-section full-view">
+      <div class="section-content">
+        <h1>Encuentra más información en:</h1>
+        <div class="contact-cards-container">
+          <div class="contact-card">
+            <img
+              src="/huella_carbono/images/api.jpeg"
+              alt="Documento"
+              class="contact-card-image"
+            />
+            <h3>Documentacion Api</h3>
+            <a href="https://api.websitecarbon.com/"><p><strong>Link:</strong> https://api.websitecarbon.com/</p></a>
+            
+          </div>
+          <div class="contact-card">
+            <img
+              src="/huella_carbono/images/git.jpg"
+              alt="Persona 2"
+              class="contact-card-image"
+            />
+            <h3>Repositorio Git-Hub</h3>
+            <button class="botonCard">
+              <i class="fas fa-link">Visitar</i> 
+            </button>
+                                    
+          </div>
+          <div class="contact-card">
+            <img
+              src="/huella_carbono/images/iso.jpeg"
+              alt="Persona 3"
+              class="contact-card-image"
+            />
+            <h3>Norma Iso 696969</h3>
+            <p><strong>Link:</strong> Técnico de Soporte</p>
+            <button class="botonCard">
+              <i class="fas fa-download"></i> Descargar
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer full-view">
+      <p>&copy; 2024 Eco-Check. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Librerías -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
