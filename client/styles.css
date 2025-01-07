@@ -1,39 +1,87 @@
-/* styles.css */
-
+/* Estilo global para la página */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: white;
-  color: #333;
+  background-color: #f4f4f9; /* Fondo suave y neutro */
+  color: #333; /* Texto oscuro para mejor contraste */
+  position: relative;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
-.navbar {
-  background-color: #2c6f2c; /* Verde */
-}
-
-.navbar .nav-link {
-  color: white !important;
-}
-
-.navbar .nav-link:hover {
-  color: #f1f1f1 !important;
-}
-
-h1, p {
+/* Estilo vintage para el título */
+h1.title {
+  font-family: 'Georgia', serif;
   color: #2c6f2c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-footer {
-  background-color: #2c6f2c;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+h1.title:hover {
+  transform: scale(1.1); /* Aumentar tamaño */
+  color: #1a5e1a; /* Color vintage al pasar el ratón */
 }
 
-footer p {
-  margin: 0;
+/* Barra de navegación fija con un toque vintage */
+#navbar {
+  position: fixed; /* Barra fija en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que la barra esté encima del contenido */
+  background-color: rgba(44, 111, 44, 0.8); /* Fondo transparente */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 10px 20px; /* Espaciado interno */
+  transition: top 0.3s ease; /* Efecto de transición al mover la barra */
 }
 
-/* Agrega estilos adicionales para tus secciones */
+/* Cuando la barra se desplaza hacia abajo, se asoma más */
+body.scrolled #navbar {
+  top: -70px; /* Barra oculta cuando se hace scroll */
+}
+
+/* Estilo del logo */
+.navbar-brand {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Estilo de los enlaces en la barra */
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 1.1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #1a5e1a !important; /* Efecto hover vintage */
+}
+
+
+/* Estilos adicionales para mantener el contenido debajo de la barra */
+body {
+  margin-top: 70px; /* Deja espacio para que no quede oculto bajo la barra */
+}
+
+/* Estilo de los botones */
+.btn-primary {
+  background-color: #1a5e1a;
+  border-color: #1a5e1a;
+}
+
+.btn-primary:hover {
+  background-color: #145d1c;
+  border-color: #145d1c;
+}
+/* Estilo vintage para el título */
+h1.title {
+  font-family: 'Georgia', serif;
+  color: #2c6f2c;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+h1.title:hover {
+  transform: scale(1.1); /* Aumentar tamaño */
+  color: #1a5e1a; /* Color vintage al pasar el ratón */
+}

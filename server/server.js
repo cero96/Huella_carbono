@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const jwt = require('jsonwebtoken');  // Agregar la librería JWT
+const jwt = require('jsonwebtoken');  
 require('dotenv').config();  // Cargar las variables de entorno desde el archivo .env
 
 const loginRoute = require('./routes/loginRoute');
