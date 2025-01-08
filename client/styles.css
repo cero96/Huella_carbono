@@ -1,13 +1,13 @@
 /* Estilo global para la página */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9; /* Fondo suave y neutro */
-  color: #333; /* Texto oscuro para mejor contraste */
+  background-color: #f4f4f9;
+  color: #333;
   position: relative;
-  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  overflow-x: hidden;
+  padding-top: 80px; /* Asegura que el contenido no se solape con la barra de navegación */
 }
 
-/* Estilo vintage para el título */
 h1.title {
   font-family: 'Georgia', serif;
   color: #2c6f2c;
@@ -16,72 +16,121 @@ h1.title {
 }
 
 h1.title:hover {
-  transform: scale(1.1); /* Aumentar tamaño */
-  color: #1a5e1a; /* Color vintage al pasar el ratón */
+  transform: scale(1.1);
+  color: #1a5e1a;
 }
 
-/* Barra de navegación fija con un toque vintage */
+/* Barra de navegación */
 #navbar {
-  position: fixed; /* Barra fija en la parte superior */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Asegura que la barra esté encima del contenido */
-  background-color: rgba(44, 111, 44, 0.8); /* Fondo transparente */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  padding: 10px 20px; /* Espaciado interno */
-  transition: top 0.3s ease; /* Efecto de transición al mover la barra */
+  z-index: 1000;
+  background-color: rgba(44, 111, 44, 0.8);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px 20px; /* Reducido el padding para hacerla más pequeña */
 }
 
-/* Cuando la barra se desplaza hacia abajo, se asoma más */
-body.scrolled #navbar {
-  top: -70px; /* Barra oculta cuando se hace scroll */
-}
-
-/* Estilo del logo */
 .navbar-brand {
   font-family: 'Georgia', serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Tamaño de fuente reducido */
   font-weight: bold;
   color: #fff;
 }
 
-/* Estilo de los enlaces en la barra */
 .navbar-nav .nav-link {
   color: #fff !important;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Tamaño de fuente reducido */
 }
 
 .navbar-nav .nav-link:hover {
-  color: #1a5e1a !important; /* Efecto hover vintage */
+  color: #1a5e1a !important;
 }
 
+.navbar-toggler {
+  font-size: 1rem; /* Tamaño de la barra del menú móvil reducido */
+}
 
-/* Estilos adicionales para mantener el contenido debajo de la barra */
+/* Ajuste para la estructura de la barra */
 body {
-  margin-top: 70px; /* Deja espacio para que no quede oculto bajo la barra */
+  margin-top: 70px; /* Deja espacio para la barra de navegación */
 }
 
-/* Estilo de los botones */
+/* Estilos para las tarjetas de cada electrodoméstico */
+.card-body {
+  padding: 20px;
+}
+
+.card-body input {
+  margin-top: 10px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.resultado-individual {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
 .btn-primary {
   background-color: #1a5e1a;
   border-color: #1a5e1a;
+  padding: 10px 20px;
+  font-size: 1.1rem;
 }
 
 .btn-primary:hover {
   background-color: #145d1c;
   border-color: #145d1c;
 }
-/* Estilo vintage para el título */
-h1.title {
-  font-family: 'Georgia', serif;
-  color: #2c6f2c;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
+.result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #e0ffe0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #4CAF50;
 }
 
-h1.title:hover {
-  transform: scale(1.1); /* Aumentar tamaño */
-  color: #1a5e1a; /* Color vintage al pasar el ratón */
+/* Responsividad */
+@media (max-width: 768px) {
+  .card-body input {
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem; /* Ajuste para la marca en pantallas pequeñas */
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem; /* Ajuste para los enlaces en pantallas pequeñas */
+  }
 }
